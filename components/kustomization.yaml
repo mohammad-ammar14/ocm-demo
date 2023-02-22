@@ -5,3 +5,4 @@ resources:
 - db-componentversion.yaml
 - app-resource.yaml
 - db-resource.yaml
+- app-localization.yaml
