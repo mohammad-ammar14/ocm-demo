@@ -7,3 +7,4 @@ resources:
 - db-resource.yaml
 - app-localization.yaml
 - db-localization.yaml
+- db-oci_kustomization.yaml
