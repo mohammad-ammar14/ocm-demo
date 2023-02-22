@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: default
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db-app
+  template: 
+    metadata: 
+      labels: 
+        app: db-app
+    spec: 
+      containers:
+      - image: noimage:v0.0.0 # we'll use localization later to correctly specify the image
+        name: db-app
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: mesutOzil31@%
+        ports:
+        - containerPort: 3306
+          name: http   
+          # volumeMounts:
+          #   - name: mysql-persistent-storage
+          #     mountPath: /var/lib/mysql    
+#            - name: database-creation
+#              mountPath: /docker-entrypoint-initdb.d
+      # volumes: 
+      #   - name: mysql-persistent-storage
+      #     persistentVolumeClaim:
+      #       claimName: django-pv-claim1
+#        - name: database-creation
+#          configMap:
+#            name: database-creation
+---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: podinfo
+#   namespace: default
+#   labels:
+#     app: podinfo
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: podinfo
+#   template:
+#     metadata:
+#       labels:
+#         app: podinfo
+#     spec:
+#       containers:
+#       - image: noimage:v0.0.0 # we'll use localization later to correctly specify the image
+#         name: podinfo
+#         ports:
+#         - containerPort: 9898
+#           name: http
