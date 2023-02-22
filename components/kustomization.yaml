@@ -3,3 +3,5 @@ kind: Kustomization
 resources:
 - app-componentversion.yaml
 - db-componentversion.yaml
+- app-resource.yaml
+- db-resource.yaml
