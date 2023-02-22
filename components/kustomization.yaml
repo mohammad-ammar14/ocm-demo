@@ -6,3 +6,4 @@ resources:
 - app-resource.yaml
 - db-resource.yaml
 - app-localization.yaml
+- db-localization.yaml
